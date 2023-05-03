@@ -1,0 +1,16 @@
+
+.statusTable td {
+    min-width: 17px;
+    text-align: center;
+    border: 1px solid #4f565f;
+  }
+
+.available {
+    background-color: green;
+    color: white; 
+}
+
+.notAvailable {
+    background-color: red;
+    color: white;
+}
