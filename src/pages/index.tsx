@@ -1,4 +1,3 @@
-import MapView from '@bysykkel/components/map';
 import { fetchBikeDate } from '@bysykkel/services/stationService';
 import { Station } from '@bysykkel/types';
 import dynamic from 'next/dynamic';
@@ -14,7 +13,7 @@ export default function Bikes({ data }: { data: Station[] }) {
     );
   }
   return (
-    <div style={{ aspectRatio: 600 / 600 }}>
+    <div style={{ aspectRatio: 600 / 300 }}>
       <DynamicMapView stations={data} />
     </div>
   );
