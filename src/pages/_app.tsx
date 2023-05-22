@@ -9,6 +9,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Origo - Bysykkel</title>
         <meta name='description' content='Bysykkel oversikt' />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+        />
       </Head>
       <Component {...pageProps} />
     </>

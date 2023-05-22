@@ -2,16 +2,20 @@ import { Station } from '@bysykkel/types';
 
 const StationView = ({ station }: { station: Station }) => {
   return (
-    <table>
+    <table aria-label='Stasjonsinformasjon'>
       <tbody>
         <tr>
-          <th>{station.name}</th>
+          <th aria-label='Stasjonsnavn'>{station.name}</th>
         </tr>
         <tr>
-          <td>Ledige sykler: {station.num_bikes_available}</td>
+          <td aria-label='Sykler'>
+            Ledige sykler: {station.num_bikes_available}
+          </td>
         </tr>
         <tr>
-          <td>Ledige låser: {station.num_docks_available}</td>
+          <td aria-label='Låser'>
+            Ledige låser: {station.num_docks_available}
+          </td>
         </tr>
       </tbody>
     </table>

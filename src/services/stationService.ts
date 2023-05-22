@@ -1,5 +1,6 @@
 import { Station, StationInformation, StationStatus } from '@bysykkel/types';
 import logger from '@bysykkel/utils/logger';
+import { merge } from './dataMerger';
 
 const clientIdentifier =
   process.env.clientIdentifier || 'origotest-peters-besvarelse';
@@ -39,18 +40,8 @@ export const fetchBikeDate = async (): Promise<Station[]> => {
   if (!stationStatus || stationStatus.length === 0) {
     return [];
   }
-
-  return (
-    stationInformation.data.stations?.map(
-      (stationInformation: StationInformation) => {
-        return {
-          ...stationInformation,
-          ...stationStatus.data.stations.find(
-            (stationStatus: StationStatus) =>
-              stationStatus.station_id === stationInformation.station_id
-          ),
-        };
-      }
-    ) || []
+  return merge(
+    stationInformation?.data?.stations,
+    stationStatus?.data?.stations
   );
 };

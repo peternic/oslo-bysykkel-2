@@ -9,11 +9,11 @@ const stationIcon = ({ station }: { station: Station }) => {
   return divIcon({
     className: 'leaflet-marker-icon arrow_box',
     html: `
-            <table class="statusTable">
+            <table class="statusTable" aria-label="Kart markør" data-test-id="Marker ${station.name}">
                 <tbody>
                     <tr>
-                        <td class=${bikesAvailableClassName}>${station.num_bikes_available}</td>
-                        <td class=${spotsAvailableClassName}>${station.num_docks_available}</td>
+                        <td aria-label="Antall sykler ledig" class="${bikesAvailableClassName}">${station.num_bikes_available}</td>
+                        <td aria-label="Antall plasser ledig" class="${spotsAvailableClassName}">${station.num_docks_available}</td>
                     </tr>
                 </tbody>
             </table>
