@@ -11,4 +11,4 @@
 
 Run unit tests with jest by running: `yarn test`, and add `--watch` during development
 
-Run feature test with Cypress by running: `yarn featureTest` (mak)
+Run feature test with Cypress by running: `yarn featureTest`
